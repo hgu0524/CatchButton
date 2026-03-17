@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace CatchButton
 {
     public partial class Form1 : Form
@@ -22,11 +24,29 @@ namespace CatchButton
             runbutton.Location= new Point(nextX, nextY);
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
             this.Text = $"버튼위치: ({nextX}, {nextY})";
+            
+        
+            Random rand = new Random();
+
+            int x = rand.Next(0, this.ClientSize.Width - runbutton.Width);
+            int y = rand.Next(0, this.ClientSize.Height - runbutton.Height);
+
+            runbutton.Location = new Point(x, y);
+
+            // 도망갈 때 소리
+            SoundPlayer player = new SoundPlayer(@"C:\Users\사용자\Downloads\Blop Sound.wav");
+            player.Play();
+
         }
 
         private void runbutton_Click(object sender, EventArgs e)
         {
+            // 메시지
+            MessageBox.Show("축하합니다~!");
 
+            // 잡았을 때 소리
+            SoundPlayer catchSound = new SoundPlayer(@"C:\Users\사용자\Downloads\Coin 1.wav");
+            catchSound.Play();
         }
     }
 }
