@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             runbutton = new Button();
+            resetbutton = new Button();
             SuspendLayout();
             // 
             // runbutton
@@ -42,13 +43,24 @@
             runbutton.Text = "나를 잡아봐";
             runbutton.UseVisualStyleBackColor = false;
             runbutton.Click += runbutton_Click;
-            runbutton.MouseEnter += button1_MouseEnter;
+            runbutton.MouseEnter += runbutton_MouseEnter;
+            // 
+            // resetbutton
+            // 
+            resetbutton.Location = new Point(942, 528);
+            resetbutton.Name = "resetbutton";
+            resetbutton.Size = new Size(161, 48);
+            resetbutton.TabIndex = 1;
+            resetbutton.Text = "다시 시작";
+            resetbutton.UseVisualStyleBackColor = true;
+            resetbutton.Click += resetButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1103, 575);
+            Controls.Add(resetbutton);
             Controls.Add(runbutton);
             Name = "Form1";
             Text = "Form1";
@@ -58,5 +70,6 @@
         #endregion
 
         private Button runbutton;
+        private Button resetbutton;
     }
 }
